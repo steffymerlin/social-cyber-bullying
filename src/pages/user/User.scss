@@ -1,0 +1,122 @@
+.connectPage { 
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f7fb;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  
+  .userCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 20px;
+  }
+  
+  @media (max-width: 1200px) {
+    .userCards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .userCards {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .userCard {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    width: 250px;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .userCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .userCardContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profilePic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #e6f2ff;
+    transition: border-color 0.3s ease;
+  }
+  
+  .profilePic:hover {
+    border-color: #1a73e8;
+  }
+  
+  .userInfo {
+    text-align: center;
+  
+    h4 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+  
+    p {
+      color: #777;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+  
+    .followButtons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+  
+      .followButton,
+      .unfollowButton {
+        background-color: #1a73e8;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+  
+      .followButton:hover,
+      .unfollowButton:hover {
+        background-color: #0057d8;
+        transform: scale(1.05);
+      }
+  
+      .unfollowButton {
+        background-color: #ff4b5c;
+      }
+  
+      .unfollowButton:hover {
+        background-color: #d13c4c;
+      }
+    }
+  }
+  

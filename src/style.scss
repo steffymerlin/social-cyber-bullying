@@ -1,0 +1,70 @@
+$themes: (
+  light: (
+    textColor: #000,
+    textColorSoft: #555,
+    bg: #fff,
+    bgSoft: #f0f0f0,
+    logo: #5271ff,
+    border: #ccc
+  ),
+  dark: (
+    textColor: #fff,
+    textColorSoft: #aaa,
+    bg: #222,
+    bgSoft: #333,
+    logo: #5271ff,
+    border: #444
+  )
+);
+
+// Helper mixin to apply theme-based styles
+@mixin themify($themes) {
+  @each $theme-name, $theme-map in $themes {
+    .theme-#{$theme-name} & {
+      @content;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get(map-get($themes, light), $key); // fallback to light if JS doesn't change class
+}
+
+// Media query mixins
+@mixin mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+// Define light and dark themes
+$light-theme: (
+  textColor: #1a1a1a,
+  bg: #ffffff,
+  border: #e2e2e2
+);
+
+$dark-theme: (
+  textColor: #f5f5f5,
+  bg: #121212,
+  border: #333333
+);
+
+// Combine themes into one map
+$themes: (
+  light: $light-theme,
+  dark: $dark-theme
+);
+
+// Mixin to apply styles based on theme
+@mixin themify($themes) {
+  @each $theme-name, $theme-map in $themes {
+    .theme-#{$theme-name} & {
+      @content;
+    }
+  }
+}
